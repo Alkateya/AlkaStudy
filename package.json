@@ -1,0 +1,93 @@
+{
+  "name": "alkastudy-offline",
+  "version": "1.0.0",
+  "description": "Aplicativo desktop offline de revisão espaçada, planejamento e gamificação dos estudos.",
+  "author": {
+    "name": "Tiago Pereira de Medeiros",
+    "email": "alkateyadev@gmail.com"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "install:ci": "bash scripts/install-ci.sh",
+    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vite",
+    "build": "bash scripts/build-verified.sh",
+    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "validate:artifact": "bash scripts/validate-artifact.sh",
+    "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
+    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate",
+    "desktop:dev": "vite --config desktop/vite.config.ts",
+    "desktop:build-ui": "vite build --config desktop/vite.config.ts",
+    "desktop:start": "electron desktop/main.cjs",
+    "desktop:dist": "npm run desktop:build-ui && electron-builder --win nsis portable --publish never"
+  },
+  "dependencies": {
+    "drizzle-orm": "0.45.2",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.37.1",
+    "@tailwindcss/postcss": "4.2.1",
+    "@types/node": "22.19.19",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.2",
+    "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "0.31.10",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.6",
+    "react-server-dom-webpack": "19.2.6",
+    "tailwindcss": "4.2.1",
+    "typescript": "5.9.3",
+    "vinext": "0.0.50",
+    "vite": "8.0.13",
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12",
+    "wrangler": "4.92.0"
+  },
+  "type": "module",
+  "displayName": "AlkaStudy",
+  "main": "desktop/main.cjs",
+  "build": {
+    "appId": "br.com.alkastudy.desktop",
+    "productName": "AlkaStudy",
+    "copyright": "Copyright © 2026 Tiago Pereira de Medeiros. Todos os direitos reservados.",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "!node_modules/**/*",
+      "dist-desktop/**/*",
+      "desktop/main.cjs",
+      "desktop/preload.cjs",
+      "package.json"
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "AlkaStudy",
+      "uninstallDisplayName": "AlkaStudy"
+    },
+    "portable": {
+      "artifactName": "AlkaStudy-${version}-Portable.${ext}"
+    }
+  }
+}
