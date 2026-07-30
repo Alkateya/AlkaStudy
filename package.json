@@ -1,6 +1,6 @@
 {
   "name": "alkastudy-offline",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Aplicativo desktop offline de revisão espaçada, planejamento e gamificação dos estudos.",
   "author": {
     "name": "Tiago Pereira de Medeiros",
@@ -27,9 +27,11 @@
   },
   "dependencies": {
     "drizzle-orm": "0.45.2",
+    "fflate": "^0.8.2",
     "next": "16.2.6",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "sql.js": "^1.13.0"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",
@@ -47,8 +49,8 @@
     "typescript": "5.9.3",
     "vinext": "0.0.50",
     "vite": "8.0.13",
-    "electron": "^37.2.0",
-    "electron-builder": "^26.0.12",
+    "electron": "37.2.0",
+    "electron-builder": "26.0.12",
     "wrangler": "4.92.0"
   },
   "type": "module",

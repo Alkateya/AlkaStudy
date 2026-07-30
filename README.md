@@ -6,20 +6,24 @@
 
 Aplicativo desktop offline de estudos que combina revisão espaçada, organização de baralhos, metas diárias e gamificação. O projeto foi concebido para apoiar estudantes de concursos públicos, escola, exames e outras jornadas de aprendizagem.
 
-> Projeto acadêmico desenvolvido por **Tiago Pereira de Medeiros**, estudante de Engenharia de Software da Uninter, como objeto de estudo para Conclusão de Curso.
+> Projeto acadêmico desenvolvido por **Tiago Pereira de Medeiros**, estudante de Engenharia de Software da Uninter.
 
-## Funcionalidades atuais
+## Funcionalidades atuais — v1.0.3
 
-- perfil de estudo armazenado localmente;
-- criação, edição e exclusão de baralhos e cartas;
-- importação de baralhos em TXT e CSV;
-- formatação segura de enunciados e respostas;
-- revisão espaçada com quatro avaliações: De novo, Difícil, Bom e Fácil;
-- persistência do histórico, do intervalo e da próxima revisão;
-- metas diárias, XP, níveis, sequência de estudo e estatísticas;
-- coleção de dez troféus e rank do usuário;
-- temas claro e escuro;
-- funcionamento local em uma janela desktop com Electron.
+- perfil, metas, XP, níveis, sequência, troféus e estatísticas;
+- criação, edição, importação e organização de baralhos e cartas;
+- pastas e subpastas, prioridades, ordenação, grade/lista e vínculo com concursos;
+- revisão espaçada com histórico, intervalo e próxima revisão persistentes;
+- importação TXT, CSV e APKG;
+- concursos abertos, previstos e realizados, calendário e histórico;
+- painel comparativo de concursos, matérias, pesos e progresso individual;
+- relatórios de compatibilidade entre concursos e progresso geral ponderado;
+- backup e restauração dos dados;
+- temas claro e escuro com controles de alto contraste;
+- funcionamento offline em aplicativo portátil para Windows.
+
+Consulte [RELEASE_NOTES_v1.0.3.md](RELEASE_NOTES_v1.0.3.md) para o histórico
+detalhado das melhorias desde a v1.0.0.
 
 ## Tecnologias
 
@@ -74,8 +78,9 @@ Marcações reconhecidas: `**negrito**`, `==marca-texto==`, `` `código` ``, `<b
 
 ## Limitações conhecidas
 
-- a importação completa de APKG ainda não foi implementada;
-- os dados ficam no armazenamento local do aplicativo e ainda não possuem sincronização ou backup automático;
+- os dados ficam no armazenamento local do aplicativo e não possuem sincronização em nuvem;
+- o backup e a restauração são iniciados manualmente pelo usuário;
+- editais e notícias externas não são coletados automaticamente de uma fonte oficial;
 - o algoritmo de revisão é uma implementação própria e deverá ser validado empiricamente no estudo acadêmico;
 - não há conexão com serviços externos na versão offline.
 

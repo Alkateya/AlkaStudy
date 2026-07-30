@@ -1,6 +1,13 @@
 const { app, BrowserWindow, shell } = require("electron");
 const path = require("node:path");
 
+// Keep the exact profile identity used by the approved 1.0.0 portable build.
+// Electron derives localStorage/IndexedDB paths from the application name, so
+// changing productName during packaging would otherwise make existing data
+// appear to have disappeared.
+app.setName("alkastudy-offline");
+app.setPath("userData", path.join(app.getPath("appData"), "alkastudy-offline"));
+
 app.setAboutPanelOptions({
   applicationName: "AlkaStudy",
   applicationVersion: app.getVersion(),

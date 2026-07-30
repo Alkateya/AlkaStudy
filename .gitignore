@@ -1,0 +1,12 @@
+node_modules/
+dist-desktop/
+release/
+.next/
+dist/
+.wrangler/
+*.tsbuildinfo
+builder-debug.yml
+*.log
+.DS_Store
+Thumbs.db
+
