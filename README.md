@@ -6,7 +6,7 @@
 
 Aplicativo desktop offline de estudos que combina revisão espaçada, organização de baralhos, metas diárias e gamificação. O projeto foi concebido para apoiar estudantes de concursos públicos, escola, exames e outras jornadas de aprendizagem.
 
-> Projeto acadêmico desenvolvido por **Tiago Pereira de Medeiros**, estudante de Engenharia de Software da Uninter, como objeto de estudo para seu Trabalho de Conclusão de Curso.
+> Projeto acadêmico desenvolvido por **Tiago Pereira de Medeiros**, estudante de Engenharia de Software da Uninter, como objeto de estudo para Conclusão de Curso.
 
 ## Funcionalidades atuais
 
